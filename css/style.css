@@ -1,0 +1,632 @@
+/* =========================================================
+   1. 重置与基础样式
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+    background: #000;
+    color: #fff;
+    line-height: 1.8;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+
+/* =========================================================
+   2. 导航栏（顶部固定，flex 布局）
+========================================================= */
+/* ---------- 顶部导航栏（原底部样式修改） ---------- */
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;                     /* 改为顶部固定 */
+    width: 100%;
+    padding: 6px 5%;
+    background: rgba(0, 0, 0, 0.75);   /* 加深背景，保证文字可读 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.navbar.hide {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+/* 说明：导航栏使用顶部固定，滚动到底部时自动隐藏并显示底部泛光效果 */
+
+/* ---------- 下拉菜单样式 ---------- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: default;           /* 不显示手型，更符合下拉触发器 */
+    transition: color 0.3s;
+}
+
+.dropbtn .arrow {
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;    /* 灰色背景 */
+    min-width: 280px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    padding: 10px 0;
+    z-index: 1001;
+}
+
+.dropdown-content a {
+    display: block;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* 悬停显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ---------- 首屏内容微调（防止被导航遮挡） ---------- */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 80px 20px 0;
+}
+
+
+/* =========================================================
+   3. 底部淡蓝光效果
+========================================================= */
+body::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 999;
+    background: radial-gradient(
+        ellipse at bottom,
+        rgba(40, 120, 255, 0.16) 0%,
+        rgba(40, 120, 255, 0.1) 28%,
+        rgba(40, 120, 255, 0.06) 55%,
+        rgba(40, 120, 255, 0.02) 70%,
+        rgba(40, 120, 255, 0) 100%
+    );
+    transition: opacity 0.4s ease;
+}
+
+body.nav-hidden::after {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   4. 首屏大图
+========================================================= */
+.hero {
+    height: 100vh;
+    background: url('../images/background.png') no-repeat center center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* 首屏文字层级：项目名称最大，标语其次，说明最小 */
+.top-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 2px;
+    margin: 0 0 12px;
+    text-shadow: 0 0 12px rgba(0, 153, 255, 0.3);
+}
+
+.hero-content h1 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #eee;
+    margin: 0 0 8px;
+}
+
+.hero-content > p:not(.top-title) {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ddd;
+    max-width: 700px;
+    margin: 0 auto 24px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   5. 按钮样式
+========================================================= */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-outline {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 2px solid #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: #000;
+    color: #fff;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+}
+
+.btn-primary:hover,
+.btn-outline:hover {
+    background: #fff;
+    color: #000;
+}
+
+
+/* =========================================================
+   6. 核心优势
+   说明：
+   - 修正原来 .strengths 和 .container 都在控制布局导致不稳定的问题
+========================================================= */
+.strengths {
+    background: #000;
+}
+
+.strengths .container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 100px;
+    padding: 70px 0;
+}
+
+.strength-box h2 {
+    font-size: 42px;
+    color: #007BFF;
+    line-height: 1.2;
+}
+
+.strength-box p {
+    color: #ccc;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   7. 产品中心
+   重点修改：
+   - 产品卡片现在是 <a class="product-card" href="...">
+   - 所以必须设置 display:block、color、text-decoration
+   - 增加网格布局，后面十几个产品会自动排列
+========================================================= */
+.products {
+    background: #000;
+    padding: 80px 0;
+}
+
+.products h2 {
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* 如果你的 index.html 里有 .product-grid，就用这个布局 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+/* 如果你的 index.html 还没有 .product-grid，这个选择器也能兼容 */
+.products .container > .product-card {
+    margin-bottom: 30px;
+}
+
+.product-card {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    border-left: 4px solid #007BFF;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    background: #252525;
+}
+
+.product-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    background: #111;
+}
+
+.product-card h3 {
+    font-size: 22px;
+    margin: 24px 26px 10px;
+    line-height: 1.4;
+}
+
+.product-card p {
+    color: #ccc;
+    font-size: 15px;
+    margin: 0 26px 20px;
+}
+
+.product-card .tag {
+    margin-bottom: 26px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #333;
+    color: #d6d6d6;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 26px;
+    margin-right: 4px;
+}
+
+
+/* =========================================================
+   8. 联系我们 / 底部
+========================================================= */
+footer {
+    text-align: center;
+    padding: 60px 20px 120px;
+    color: #999;
+    background: #000;
+}
+
+footer h3 {
+    color: #fff;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+footer p {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   9. 响应式适配
+========================================================= */
+@media (max-width: 900px) {
+    .top-title {
+        font-size: 32px;
+    }
+
+    .strengths .container {
+        gap: 50px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        width: 90%;
+        padding: 40px 0;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .navbar nav {
+        gap: 18px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 18px;
+    }
+
+    .hero-content > p:not(.top-title) {
+        font-size: 15px;
+    }
+
+    .btn-primary,
+    .btn-outline {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        padding: 12px 24px;
+    }
+
+    .strengths .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .products h2 {
+        font-size: 28px;
+    }
+
+    .product-card img {
+        height: 210px;
+    }
+
+    .product-card h3 {
+        font-size: 20px;
+    }
+}
+
+/* =========================================================
+   9.5 响应式 - 首屏文字调整
+========================================================= */
+@media (max-width: 640px) {
+    .top-title {
+        font-size: 30px;
+    }
+}
+
+/* =========================================================
+   10. 粒子背景特效样式
+========================================================= */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* 置于内容之下、body背景之上 */
+    pointer-events: none; /* 关键：让鼠标事件穿透画布，不影响按钮点击 */
+    background: transparent; /* 保持透明，透出原本的黑色背景 */
+}
+
+/* 如果您希望首屏的粒子更明显，可以单独给 .hero 区域加个遮罩层微调，
+   但通常上面的设置已经足够兼容您的深色主题。 */
+
+
+/* =========================================================
+   11. 产品分类筛选与区块样式
+========================================================= */
+/* ---------- 筛选按钮栏 ---------- */
+.category-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+    position: sticky;
+    top: 56px;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 14px 0;
+    backdrop-filter: blur(8px);
+}
+
+.cat-btn {
+    padding: 8px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
+    color: #aaa;
+    border-radius: 24px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.cat-btn:hover {
+    border-color: #007BFF;
+    color: #fff;
+    background: rgba(0, 123, 255, 0.12);
+}
+
+.cat-btn.active {
+    background: #007BFF;
+    border-color: #007BFF;
+    color: #fff;
+}
+
+/* ---------- 分类区块 ---------- */
+.category-section {
+    margin-bottom: 70px;
+    scroll-margin-top: 120px;
+}
+
+.category-section:last-child {
+    margin-bottom: 0;
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.category-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 6px;
+    position: relative;
+    display: inline-block;
+}
+
+.category-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: #007BFF;
+    border-radius: 2px;
+}
+
+.category-subtitle {
+    display: block;
+    font-size: 14px;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 14px;
+}
+
+.category-desc {
+    text-align: center;
+    color: #aaa;
+    font-size: 15px;
+    max-width: 650px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* ---------- 响应式：分类筛选 ---------- */
+@media (max-width: 900px) {
+    .category-filter {
+        gap: 8px;
+        padding: 10px 0;
+        top: 50px;
+    }
+
+    .cat-btn {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+
+    .category-title {
+        font-size: 24px;
+    }
+
+    .category-section {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 640px) {
+    .category-filter {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 10px 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category-filter::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cat-btn {
+        flex-shrink: 0;
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .category-title {
+        font-size: 22px;
+    }
+
+    .category-subtitle {
+        font-size: 12px;
+    }
+
+    .category-desc {
+        font-size: 14px;
+    }
+
+    .category-section {
+        margin-bottom: 40px;
+        scroll-margin-top: 100px;
+    }
+}

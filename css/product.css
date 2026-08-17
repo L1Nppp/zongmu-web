@@ -1,0 +1,394 @@
+/* =========================================================
+   产品详情页公共样式 v2.0
+   风格与首页 style.css 完全统一
+   黑底 + 蓝色科技感 + 玻璃拟态 + 卡片交互
+========================================================= */
+
+/* ---------- 1. 页面基础与背景氛围 ---------- */
+body.product-page {
+    position: relative;
+    background: #000;
+    color: #fff;
+    font-family: 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+
+    /* 背景装饰：极淡科技网格 + 蓝色氛围光晕 */
+    background-image:
+        radial-gradient(ellipse at 25% 20%, rgba(0, 123, 255, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 60%, rgba(0, 123, 255, 0.05) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: auto, auto, 50px 50px, 50px 50px;
+    background-attachment: fixed;
+}
+
+/* 左下角补充光晕 */
+body.product-page::before {
+    content: '';
+    position: fixed;
+    left: -120px;
+    bottom: -120px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 底部泛光效果（与首页 body::after 一致） */
+body.product-page::after {
+    content: '';
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    pointer-events: none;
+    z-index: 999;
+    background: radial-gradient(
+        ellipse at bottom,
+        rgba(40, 120, 255, 0.16) 0%,
+        rgba(40, 120, 255, 0.10) 28%,
+        rgba(40, 120, 255, 0.06) 55%,
+        rgba(40, 120, 255, 0.02) 70%,
+        rgba(40, 120, 255, 0) 100%
+    );
+}
+
+/* 主体内容置于装饰层之上 */
+.product-detail {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- 2. 顶部导航（与首页 navbar 一致） ---------- */
+.product-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-header .container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 0;
+}
+
+/* 右侧产品标签 */
+.product-header .container::after {
+    content: '产品详情';
+    margin-left: auto;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    white-space: nowrap;
+}
+
+/* 返回按钮 - 胶囊风格 */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 24px;
+    background: transparent;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.back-btn:hover {
+    border-color: #007BFF;
+    background: rgba(0, 123, 255, 0.12);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.15);
+    transform: translateX(-2px);
+}
+
+/* ---------- 3. 产品 Hero 区 ---------- */
+.product-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 64px;
+}
+
+.product-hero h1 {
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+    color: #fff;
+    position: relative;
+    padding-bottom: 18px;
+}
+
+/* 标题下方蓝色装饰线 */
+.product-hero h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 52px;
+    height: 3px;
+    background: #007BFF;
+    border-radius: 2px;
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.5);
+}
+
+.product-hero p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.9;
+    max-width: 560px;
+}
+
+.product-hero img {
+    width: 100%;
+    display: block;
+    border-radius: 24px;
+    object-fit: cover;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(0, 123, 255, 0.08);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.product-hero img:hover {
+    transform: scale(1.02);
+    border-color: rgba(0, 123, 255, 0.35);
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(0, 123, 255, 0.14);
+}
+
+/* ---------- 4. 内容卡片 ---------- */
+.detail-card {
+    position: relative;
+    margin-bottom: 24px;
+    padding: 32px 36px;
+    border-radius: 14px;
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-left: 4px solid #007BFF;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(0, 123, 255, 0.05);
+    background: #252525;
+}
+
+.detail-card h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 标题前的蓝色竖条 */
+.detail-card h2::before {
+    content: '';
+    width: 4px;
+    height: 22px;
+    background: #007BFF;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    flex-shrink: 0;
+}
+
+.detail-card p {
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.76);
+    line-height: 1.9;
+}
+
+/* ---------- 5. 参数列表 ---------- */
+.param-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.param-list div {
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.78);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+/* 参数项前蓝色圆点 */
+.param-list div::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+    flex-shrink: 0;
+}
+
+.param-list div:hover {
+    border-color: rgba(0, 123, 255, 0.35);
+    background: rgba(0, 123, 255, 0.06);
+    transform: translateX(4px);
+}
+
+/* ---------- 6. 媒体演示区 ---------- */
+.media-box {
+    margin-top: 18px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 24px rgba(0, 123, 255, 0.05);
+}
+
+.media-box model-viewer,
+.media-box iframe,
+.media-box video {
+    width: 100%;
+    min-height: 480px;
+    display: block;
+    border: 0;
+    background: #111;
+}
+
+.media-tip {
+    padding: 14px 18px;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- 7. 滚动条优化 ---------- */
+body.product-page::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.product-page::-webkit-scrollbar-track {
+    background: #000;
+}
+
+body.product-page::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+body.product-page::-webkit-scrollbar-thumb:hover {
+    background: #007BFF;
+}
+
+/* ---------- 8. 响应式 ---------- */
+@media (max-width: 900px) {
+    .product-detail,
+    .product-header .container {
+        width: 90%;
+    }
+
+    .product-hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .product-hero h1 {
+        font-size: 34px;
+    }
+
+    .product-hero p {
+        font-size: 16px;
+    }
+
+    .detail-card {
+        padding: 28px 26px;
+    }
+}
+
+@media (max-width: 640px) {
+    .product-detail {
+        padding: 40px 0 80px;
+        width: 90%;
+    }
+
+    .product-header .container {
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    /* 小屏幕隐藏右侧产品标签 */
+    .product-header .container::after {
+        display: none;
+    }
+
+    .back-btn {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+
+    .product-hero {
+        margin-bottom: 40px;
+        gap: 30px;
+    }
+
+    .product-hero h1 {
+        font-size: 28px;
+        padding-bottom: 14px;
+    }
+
+    .product-hero p {
+        font-size: 15px;
+    }
+
+    .detail-card {
+        padding: 24px 20px;
+    }
+
+    .detail-card h2 {
+        font-size: 20px;
+    }
+
+    .param-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .param-list div {
+        padding: 12px 14px;
+    }
+
+    .media-box model-viewer,
+    .media-box iframe,
+    .media-box video {
+        min-height: 320px;
+    }
+}
