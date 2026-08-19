@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>纵目蓝天 - 无人机教育解决方案</title>
 
-    <!-- 公共样式：保留你原来的样式文件 -->
     <link rel="stylesheet" href="css/style.css" />
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
-    <!-- 1. 导航栏 -->
+    <!-- 页面打开时的品牌加载动画 -->
+    <div class="page-loader" aria-hidden="true">
+        <div class="page-loader__brand">纵目蓝天</div>
+        <div class="page-loader__line"></div>
+        <div class="page-loader__slogan">低空无人机实践教育引领者</div>
+    </div>
+
+    <!-- 顶部导航栏 -->
     <header class="navbar">
         <div class="container">
-            <div class="logo">纵目蓝天 <span>ZongMu</span></div>
+            <div class="logo">纵目蓝天——低空无人机实践教育引领者</div>
+
             <nav>
                 <a href="#products">产品中心</a>
                 <a href="#solutions">解决方案</a>
@@ -22,12 +30,13 @@
         </div>
     </header>
 
-    <!-- 2. 首屏大图 -->
+    <!-- 首屏 -->
     <section class="hero main-section">
         <div class="hero-content">
-            <p class="top-title">Aarobot纵目蓝天无人机教育项目</p>
+            <p class="top-title">纵目蓝天——低空无人机实践教育</p>
             <h1>深耕无人机教育 · 赋能低空经济</h1>
             <p>依托产学研协同，提供“硬件+课程+服务”一体化高校解决方案</p>
+
             <div class="hero-buttons">
                 <a href="#products" class="btn-primary">探索产品系列</a>
                 <a href="#contact" class="btn-outline">获取德阳本地支持</a>
@@ -35,17 +44,19 @@
         </div>
     </section>
 
-    <!-- 3. 核心优势 -->
+    <!-- 核心优势 -->
     <section class="strengths main-section">
         <div class="container">
             <div class="strength-box">
                 <h2>100+</h2>
                 <p>研发人员</p>
             </div>
+
             <div class="strength-box">
                 <h2>200+</h2>
                 <p>团队荣誉</p>
             </div>
+
             <div class="strength-box">
                 <h2>20+</h2>
                 <p>创新产品</p>
@@ -53,12 +64,11 @@
         </div>
     </section>
 
-    <!-- 4. 产品展示（按实验室系列分类） -->
+    <!-- 产品中心 -->
     <section class="products main-section" id="products">
         <div class="container">
             <h2>全栈式教学产品体系</h2>
 
-            <!-- 产品分类筛选导航 -->
             <div class="category-filter">
                 <button class="cat-btn active" data-category="all">全部产品</button>
                 <button class="cat-btn" data-category="assembly">基础装调实验室</button>
@@ -69,84 +79,178 @@
                 <button class="cat-btn" data-category="youth">青少年教育</button>
             </div>
 
-            <!-- ===== 分类一：无人机基础装调实验室 ===== -->
+            <!-- 无人机基础装调实验室 -->
             <div class="category-section" id="cat-assembly">
                 <div class="category-header">
                     <h3 class="category-title">无人机基础装调实验室</h3>
-                    <span class="category-subtitle">UAV Basic Assembly & Adjustment Laboratory</span>
+                    <span class="category-subtitle">
+                        UAV Basic Assembly & Adjustment Laboratory
+                    </span>
                 </div>
-                <p class="category-desc">涵盖无人机装调、检修、调试与智能机器人全流程实训，配套模块化教学资源，支撑专业基础能力培养。</p>
+
+                <p class="category-desc">
+                    涵盖无人机装调、检修、调试与智能机器人全流程实训，
+                    配套模块化教学资源，支撑专业基础能力培养。
+                </p>
+
                 <div class="product-grid">
                     <a class="product-card" href="products/product-a2.html">
-                        <img src="images/aerobot-a2.jpg" alt="AeroBOT-a2 智能无人机装调套件" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-a2.jpg"
+                            alt="AeroBOT-a2 智能无人机装调套件"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-a2 智能无人机装调套件</h3>
-                        <p>专为无人机基础教学设计的智能装调套件，集成模块化组件，支持快速拆装与调试，适合课堂教学与实训操作。</p>
+                        <p>
+                            专为无人机基础教学设计的智能装调套件，
+                            集成模块化组件，支持快速拆装与调试，
+                            适合课堂教学与实训操作。
+                        </p>
                         <span class="tag">模块化设计</span>
                         <span class="tag">教学实训</span>
                         <span class="tag">快速拆装</span>
                     </a>
+
                     <a class="product-card" href="products/product-z1.html">
-                        <img src="images/aerobot-z1.jpg" alt="AeroBOT-Z1 无人机装调检修一体化实训操作平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-z1.jpg"
+                            alt="AeroBOT-Z1 无人机装调检修一体化实训操作平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-Z1 无人机装调检修一体化实训操作平台</h3>
-                        <p>集成示波器，台式万用表，电子直流负载，可调电源等多功能设备仪表功能。</p>
+                        <p>
+                            集成示波器、台式万用表、电子直流负载、
+                            可调电源等多功能设备仪表功能。
+                        </p>
                         <span class="tag">一体化平台</span>
                         <span class="tag">检修实训</span>
                         <span class="tag">全流程</span>
                     </a>
+
                     <a class="product-card" href="products/product-z2.html">
-                        <img src="images/aerobot-z2.jpg" alt="AeroBOT-Z2 无人机综合调试平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-z2.jpg"
+                            alt="AeroBOT-Z2 无人机综合调试平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-Z2 无人机综合调试平台</h3>
-                        <p>综合调试解决方案，涵盖动力系统、飞控系统及传感器校准等功能，为无人机调试提供全方位支持。</p>
+                        <p>
+                            综合调试解决方案，涵盖动力系统、飞控系统及传感器校准等功能，
+                            为无人机调试提供全方位支持。
+                        </p>
                         <span class="tag">综合调试</span>
                         <span class="tag">传感器校准</span>
                         <span class="tag">动力测试</span>
                     </a>
+
                     <a class="product-card" href="products/aerobot-znb.html">
-                        <img src="images/aerobot-znb.jpg" alt="AeroBOT-ZNB 陆空两栖智能机器人" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-znb.jpg"
+                            alt="AeroBOT-ZNB 陆空两栖智能机器人"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-ZNB 陆空两栖机器人</h3>
-                        <p>全开放智能机器人平台，支持 ROS 系统，适用于人工智能及机器人专业教学科研。</p>
+                        <p>
+                            全开放智能机器人平台，支持ROS系统，
+                            适用于人工智能及机器人专业教学科研。
+                        </p>
                         <span class="tag">ROS开源</span>
                         <span class="tag">陆空双模式</span>
                     </a>
                 </div>
             </div>
 
-            <!-- ===== 分类二：无人机飞控实验室 ===== -->
+            <!-- 无人机飞控实验室 -->
             <div class="category-section" id="cat-flight">
                 <div class="category-header">
                     <h3 class="category-title">无人机飞控实验室</h3>
-                    <span class="category-subtitle">UAV Flight Control Laboratory</span>
+                    <span class="category-subtitle">
+                        UAV Flight Control Laboratory
+                    </span>
                 </div>
-                <p class="category-desc">聚焦飞控系统教学与算法验证，从多旋翼到固定翼，覆盖姿态控制、航迹规划与AI视觉导航等核心技术。</p>
+
+                <p class="category-desc">
+                    聚焦飞控系统教学与算法验证，从多旋翼到固定翼，
+                    覆盖姿态控制、航迹规划与AI视觉导航等核心技术。
+                </p>
+
                 <div class="product-grid">
                     <a class="product-card" href="products/product-t1.html">
-                        <img src="images/aerobot-t1.jpg" alt="AeroBOT-t1 四旋翼无人机飞行控制实验平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-t1.jpg"
+                            alt="AeroBOT-t1 四旋翼无人机飞行控制实验平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-t1 四旋翼无人机飞行控制实验平台</h3>
-                        <p>专为四旋翼飞控教学设计的实验平台，支持PID调参、姿态解算与飞控算法验证，是飞控入门教学的利器。</p>
+                        <p>
+                            专为四旋翼飞控教学设计的实验平台，
+                            支持PID调参、姿态解算与飞控算法验证，
+                            是飞控入门教学的利器。
+                        </p>
                         <span class="tag">多旋翼</span>
                         <span class="tag">PID调参</span>
                         <span class="tag">飞控算法</span>
                     </a>
+
                     <a class="product-card" href="products/product-t2.html">
-                        <img src="images/aerobot-t2.jpg" alt="AeroBOT-t2 固定翼无人机飞行控制教学科研实验平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-t2.jpg"
+                            alt="AeroBOT-t2 固定翼无人机飞行控制教学科研实验平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-t2 固定翼无人机飞行控制教学科研实验平台</h3>
-                        <p>面向固定翼无人机飞控教学的科研级平台，涵盖姿态控制、航迹规划与自主飞行等高级飞控技术的研究与教学。</p>
+                        <p>
+                            面向固定翼无人机飞控教学的科研级平台，
+                            涵盖姿态控制、航迹规划与自主飞行等高级飞控技术。
+                        </p>
                         <span class="tag">固定翼</span>
                         <span class="tag">航迹规划</span>
                         <span class="tag">自主飞行</span>
                     </a>
+
                     <a class="product-card" href="products/product-z3.html">
-                        <img src="images/aerobot-z3.jpg" alt="AeroBOT-z3 无人机综合调试与检测实训平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-z3.jpg"
+                            alt="AeroBOT-z3 无人机综合调试与检测实训平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-z3 无人机综合调试与检测实训平台</h3>
-                        <p>集飞控调试、传感器检测与系统联调于一体的综合平台，为无人机飞控系统的全面测试与教学实训提供一站式解决方案。</p>
+                        <p>
+                            集飞控调试、传感器检测与系统联调于一体，
+                            为无人机飞控系统测试与教学实训提供一站式解决方案。
+                        </p>
                         <span class="tag">综合测试</span>
                         <span class="tag">系统联调</span>
                         <span class="tag">一站式</span>
                     </a>
+
                     <a class="product-card" href="products/product-a1.html">
-                        <img src="images/aerobot-a1.jpg" alt="AeroBOT-a1 人工智能竞赛教学科研无人机" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-a1.jpg"
+                            alt="AeroBOT-a1 人工智能竞赛教学科研无人机"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-a1 人工智能竞赛教学科研无人机</h3>
-                        <p>面向AI竞赛与教学的科研级无人机平台，支持视觉导航、目标识别与路径规划，是人工智能实践教学的理想载体。</p>
+                        <p>
+                            面向AI竞赛与教学的科研级无人机平台，
+                            支持视觉导航、目标识别与路径规划。
+                        </p>
                         <span class="tag">AI竞赛</span>
                         <span class="tag">视觉导航</span>
                         <span class="tag">科研平台</span>
@@ -154,41 +258,87 @@
                 </div>
             </div>
 
-            <!-- ===== 分类三：无人机动力实验室 ===== -->
+            <!-- 无人机动力实验室 -->
             <div class="category-section" id="cat-power">
                 <div class="category-header">
                     <h3 class="category-title">无人机动力实验室</h3>
-                    <span class="category-subtitle">UAV Power Laboratory</span>
+                    <span class="category-subtitle">
+                        UAV Power Laboratory
+                    </span>
                 </div>
-                <p class="category-desc">覆盖电推进、活塞发动机、混合动力及电池测控四大方向，提供全方位动力系统测试与教学平台。</p>
+
+                <p class="category-desc">
+                    覆盖电推进、活塞发动机、混合动力及电池测控四大方向，
+                    提供全方位动力系统测试与教学平台。
+                </p>
+
                 <div class="product-grid">
                     <a class="product-card" href="products/aerobot-d1.html">
-                        <img src="images/aerobot-d1.jpg" alt="AeroBOT-D1 电推进变距测试平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-d1.jpg"
+                            alt="AeroBOT-D1 电推进变距测试平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-D1 电推进变距测试平台</h3>
-                        <p>一站式监测电压 / 电流 / 拉力 / 扭矩，可视化数据看板，保障测试安全。</p>
+                        <p>
+                            一站式监测电压、电流、拉力和扭矩，
+                            配备可视化数据看板，保障测试安全。
+                        </p>
                         <span class="tag">数据可视化</span>
                         <span class="tag">无线控制</span>
                     </a>
+
                     <a class="product-card" href="products/product-d2.html">
-                        <img src="images/aerobot-d2.jpg" alt="AeroBOT-d2 无人机活塞发动机测试平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-d2.jpg"
+                            alt="AeroBOT-d2 无人机活塞发动机测试平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-d2 无人机活塞发动机测试平台</h3>
-                        <p>针对无人机活塞发动机的专用测试平台，可精确测量扭矩、功率、油耗等关键参数，助力发动机研发与教学。</p>
+                        <p>
+                            可精确测量扭矩、功率、油耗等关键参数，
+                            助力发动机研发与教学。
+                        </p>
                         <span class="tag">活塞发动机</span>
                         <span class="tag">扭矩测量</span>
                         <span class="tag">油耗分析</span>
                     </a>
+
                     <a class="product-card" href="products/product-d3.html">
-                        <img src="images/aerobot-d3.jpg" alt="AeroBOT-d3 无人机增程式混合动力测试平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-d3.jpg"
+                            alt="AeroBOT-d3 无人机增程式混合动力测试平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-d3 无人机增程式混合动力测试平台</h3>
-                        <p>增程式混合动力系统测试平台，支持油电混合动力架构的性能评估，适用于长航时无人机的动力系统研发测试。</p>
+                        <p>
+                            支持油电混合动力架构性能评估，
+                            适用于长航时无人机动力系统研发测试。
+                        </p>
                         <span class="tag">混合动力</span>
                         <span class="tag">增程式</span>
                         <span class="tag">长航时</span>
                     </a>
+
                     <a class="product-card" href="products/product-d4.html">
-                        <img src="images/aerobot-d4.jpg" alt="AeroBOT-d4 无人机动力电池测控平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-d4.jpg"
+                            alt="AeroBOT-d4 无人机动力电池测控平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-d4 无人机动力电池测控平台</h3>
-                        <p>专注于无人机动力电池的测控平台，提供电池充放电特性分析、健康状态监测及电池管理系统（BMS）测试功能。</p>
+                        <p>
+                            提供电池充放电特性分析、健康状态监测及
+                            电池管理系统（BMS）测试功能。
+                        </p>
                         <span class="tag">电池测控</span>
                         <span class="tag">BMS测试</span>
                         <span class="tag">健康监测</span>
@@ -196,34 +346,70 @@
                 </div>
             </div>
 
-            <!-- ===== 分类四：无人机设计与制造 ===== -->
+            <!-- 无人机设计与制造 -->
             <div class="category-section" id="cat-design">
                 <div class="category-header">
                     <h3 class="category-title">无人机设计与制造</h3>
-                    <span class="category-subtitle">UAV Design & Manufacturing</span>
+                    <span class="category-subtitle">
+                        UAV Design & Manufacturing
+                    </span>
                 </div>
-                <p class="category-desc">面向整机设计、气动分析与先进构型验证，涵盖垂直起降、固定翼侦察、eVTOL等前沿方向。</p>
+
+                <p class="category-desc">
+                    面向整机设计、气动分析与先进构型验证，
+                    涵盖垂直起降、固定翼侦察、eVTOL等前沿方向。
+                </p>
+
                 <div class="product-grid">
                     <a class="product-card" href="products/product-q1.html">
-                        <img src="images/aerobot-q1.jpg" alt="AeroBOT-q1 无人机教学科研平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-q1.jpg"
+                            alt="AeroBOT-q1 无人机教学科研平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-q1 无人机教学科研平台</h3>
-                        <p>垂直起降（VTOL）固定翼无人机平台，结合多旋翼与固定翼优势，适用于设计制造、气动分析及飞控系统教学科研。</p>
+                        <p>
+                            垂直起降固定翼无人机平台，
+                            适用于设计制造、气动分析及飞控系统教学科研。
+                        </p>
                         <span class="tag">垂直起降</span>
                         <span class="tag">固定翼</span>
                         <span class="tag">设计制造</span>
                     </a>
+
                     <a class="product-card" href="products/product-gdy.html">
-                        <img src="images/aerobot-gdy.jpg" alt="AeroBOT-gdy CUADC固定翼侦察与打击无人机" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-gdy.jpg"
+                            alt="AeroBOT-gdy CUADC固定翼侦察与打击无人机"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-gdy CUADC固定翼侦察与打击无人机</h3>
-                        <p>面向CUADC竞赛的固定翼侦察与打击一体化无人机，具备高性能气动布局与精确打击能力，是竞赛与教学的优良平台。</p>
+                        <p>
+                            面向CUADC竞赛的固定翼侦察与打击一体化无人机，
+                            是竞赛与教学的优良平台。
+                        </p>
                         <span class="tag">CUADC</span>
                         <span class="tag">侦察打击</span>
                         <span class="tag">竞赛平台</span>
                     </a>
+
                     <a class="product-card" href="products/product-e1.html">
-                        <img src="images/aerobot-e1.jpg" alt="AeroBOT-e1 eVTOL综合教学科研系统平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-e1.jpg"
+                            alt="AeroBOT-e1 eVTOL综合教学科研系统平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-e1 eVTOL综合教学科研系统平台</h3>
-                        <p>面向eVTOL（电动垂直起降飞行器）教学与科研的综合平台，覆盖电推进、飞控、航电等核心系统的教学实践。</p>
+                        <p>
+                            面向eVTOL教学与科研的综合平台，
+                            覆盖电推进、飞控、航电等核心系统。
+                        </p>
                         <span class="tag">EVTOL</span>
                         <span class="tag">低空经济</span>
                         <span class="tag">综合科研</span>
@@ -231,18 +417,34 @@
                 </div>
             </div>
 
-            <!-- ===== 分类五：无人机表演实验室 ===== -->
+            <!-- 无人机表演实验室 -->
             <div class="category-section" id="cat-performance">
                 <div class="category-header">
                     <h3 class="category-title">无人机表演实验室</h3>
-                    <span class="category-subtitle">UAV Performance Laboratory</span>
+                    <span class="category-subtitle">
+                        UAV Performance Laboratory
+                    </span>
                 </div>
-                <p class="category-desc">支持大规模无人机集群编队飞行表演，集成协同控制算法与灯光系统，打造震撼的空中视觉盛宴。</p>
+
+                <p class="category-desc">
+                    支持大规模无人机集群编队飞行表演，
+                    集成协同控制算法与灯光系统。
+                </p>
+
                 <div class="product-grid">
                     <a class="product-card" href="products/product-l1.html">
-                        <img src="images/aerobot-l1.jpg" alt="AeroBOT-l1 无人机集群飞行表演系统平台" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-l1.jpg"
+                            alt="AeroBOT-l1 无人机集群飞行表演系统平台"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-l1 无人机集群飞行表演系统平台</h3>
-                        <p>支持大规模无人机集群编队飞行表演的系统平台，集成先进的协同控制算法与灯光系统，打造震撼的空中视觉盛宴。</p>
+                        <p>
+                            集成先进协同控制算法与灯光系统，
+                            打造震撼的空中视觉盛宴。
+                        </p>
                         <span class="tag">集群飞行</span>
                         <span class="tag">编队表演</span>
                         <span class="tag">协同控制</span>
@@ -250,18 +452,34 @@
                 </div>
             </div>
 
-            <!-- ===== 分类六：青少年科技教育 ===== -->
+            <!-- 青少年科技教育 -->
             <div class="category-section" id="cat-youth">
                 <div class="category-header">
                     <h3 class="category-title">青少年科技教育</h3>
-                    <span class="category-subtitle">Youth STEM Education</span>
+                    <span class="category-subtitle">
+                        Youth STEM Education
+                    </span>
                 </div>
-                <p class="category-desc">专为青少年设计的无人机科技教育套餐，融合硬件组装、编程启蒙与科创竞技，激发航空科技兴趣。</p>
+
+                <p class="category-desc">
+                    专为青少年设计的无人机科技教育套餐，
+                    融合硬件组装、编程启蒙与科创竞技。
+                </p>
+
                 <div class="product-grid">
                     <a class="product-card" href="products/product-k1.html">
-                        <img src="images/aerobot-k1.jpg" alt="AeroBOT-k1 青少年无人机科技教育系列套餐" />
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                            data-src="images/aerobot-k1.jpg"
+                            alt="AeroBOT-k1 青少年无人机科技教育系列套餐"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <h3>AeroBOT-k1 青少年无人机科技教育系列套餐</h3>
-                        <p>专为青少年设计的无人机科技教育套餐，包含安全易学的入门级无人机、趣味编程课程与丰富的教学资源，激发青少年对航空科技的兴趣。</p>
+                        <p>
+                            包含安全易学的入门级无人机、趣味编程课程与丰富教学资源，
+                            激发青少年对航空科技的兴趣。
+                        </p>
                         <span class="tag">青少年教育</span>
                         <span class="tag">趣味编程</span>
                         <span class="tag">安全易学</span>
@@ -271,15 +489,18 @@
         </div>
     </section>
 
-    <!-- 5. 解决方案：原导航里有 #solutions，这里补一个锚点，避免导航点击无效 -->
+    <!-- 解决方案 -->
     <section class="solutions main-section" id="solutions">
         <div class="container">
             <h2>解决方案</h2>
-            <p>面向高校无人机、人工智能、机器人、自动化及低空经济相关专业，提供硬件平台、课程资源、实验实训、竞赛支持与本地化服务。</p>
+            <p>
+                面向高校无人机、人工智能、机器人、自动化及低空经济相关专业，
+                提供硬件平台、课程资源、实验实训、竞赛支持与本地化服务。
+            </p>
         </div>
     </section>
 
-    <!-- 6. 底部联系 -->
+    <!-- 联系我们 -->
     <footer class="main-section" id="contact">
         <div class="container">
             <h3>联系我们 · 助力德阳职教发展</h3>
@@ -289,135 +510,241 @@
         </div>
     </footer>
 
-    <!-- 首页只保留首页需要的交互逻辑 -->
     <script src="js/main.js"></script>
 
-    <!-- 背景粒子特效容器 -->
+    <!-- 粒子动画画布 -->
     <canvas id="particle-canvas"></canvas>
 
-    <!-- 粒子特效脚本 -->
-<script>
-    const canvas = document.getElementById('particle-canvas');
-    const ctx = canvas.getContext('2d');
-    
-    let width, height;
-    let particles = [];
-    
-    // 配置参数：您可以在此调整特效密度和颜色
-    const config = {
-        particleCount: 80,      // 粒子数量（越少越流畅）
-        lineDistance: 120,      // 连线距离阈值
-        mouseRadius: 150,       // 鼠标互动半径
-        speed: 0.5,             // 粒子运动速度
-        color: '40, 120, 255'   // 粒子颜色 (R, G, B)，这里使用了您网站的主色调蓝
-    };
+    <script>
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
 
-    // 鼠标位置追踪
-    let mouse = { x: null, y: null };
+        let width;
+        let height;
+        let particles = [];
 
-    window.addEventListener('mousemove', (e) => {
-        mouse.x = e.x;
-        mouse.y = e.y;
-    });
+        const config = {
+            particleCount: 80,
+            lineDistance: 120,
+            mouseRadius: 150,
+            speed: 0.5,
+            color: '40, 120, 255'
+        };
 
-    window.addEventListener('mouseleave', () => {
-        mouse.x = null;
-        mouse.y = null;
-    });
+        const mouse = {
+            x: null,
+            y: null
+        };
 
-    // 初始化画布尺寸
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
+        window.addEventListener('mousemove', event => {
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+        });
 
-    // 粒子类
-    class Particle {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * config.speed;
-            this.vy = (Math.random() - 0.5) * config.speed;
-            this.size = Math.random() * 2 + 1;
+        window.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
         }
 
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-            // 边界反弹
-            if (this.x < 0 || this.x > width) this.vx *= -1;
-            if (this.y < 0 || this.y > height) this.vy *= -1;
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * config.speed;
+                this.vy = (Math.random() - 0.5) * config.speed;
+                this.size = Math.random() * 2 + 1;
+            }
 
-            // 鼠标互动（简单的避让效果）
-            if (mouse.x != null) {
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx*dx + dy*dy);
-                if (distance < config.mouseRadius) {
-                    const forceDirectionX = dx / distance;
-                    const forceDirectionY = dy / distance;
-                    const force = (config.mouseRadius - distance) / config.mouseRadius;
-                    const directionX = forceDirectionX * force * 2; // 斥力强度
-                    const directionY = forceDirectionY * force * 2;
-                    this.x -= directionX;
-                    this.y -= directionY;
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > width) {
+                    this.vx *= -1;
                 }
+
+                if (this.y < 0 || this.y > height) {
+                    this.vy *= -1;
+                }
+
+                if (mouse.x !== null) {
+                    const dx = mouse.x - this.x;
+                    const dy = mouse.y - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance > 0 && distance < config.mouseRadius) {
+                        const forceX = dx / distance;
+                        const forceY = dy / distance;
+                        const force =
+                            (config.mouseRadius - distance) /
+                            config.mouseRadius;
+
+                        this.x -= forceX * force * 2;
+                        this.y -= forceY * force * 2;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(
+                    this.x,
+                    this.y,
+                    this.size,
+                    0,
+                    Math.PI * 2
+                );
+                ctx.fillStyle = `rgba(${config.color}, 0.6)`;
+                ctx.fill();
             }
         }
 
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${config.color}, 0.6)`;
-            ctx.fill();
-        }
-    }
+        function initParticles() {
+            particles = [];
 
-    // 初始化粒子
-    function initParticles() {
-        particles = [];
-        // 根据屏幕宽度动态调整数量，手机端少一点
-        const count = window.innerWidth < 768 ? 40 : config.particleCount;
-        for (let i = 0; i < count; i++) {
-            particles.push(new Particle());
-        }
-    }
+            const count =
+                window.innerWidth < 768
+                    ? 40
+                    : config.particleCount;
 
-    // 动画循环
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-        
-        for (let i = 0; i < particles.length; i++) {
-            particles[i].update();
-            particles[i].draw();
-
-            // 绘制连线
-            for (let j = i; j < particles.length; j++) {
-                let dx = particles[i].x - particles[j].x;
-                let dy = particles[i].y - particles[j].y;
-                let distance = Math.sqrt(dx*dx + dy*dy);
-
-                if (distance < config.lineDistance) {
-                    ctx.beginPath();
-                    // 距离越近线条越不透明
-                    let opacity = 1 - (distance / config.lineDistance);
-                    ctx.strokeStyle = `rgba(${config.color}, ${opacity * 0.2})`; 
-                    ctx.lineWidth = 1;
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.stroke();
-                }
+            for (let index = 0; index < count; index += 1) {
+                particles.push(new Particle());
             }
         }
-        requestAnimationFrame(animate);
-    }
 
-    initParticles();
-    animate();
-</script>
+        function animateParticles() {
+            ctx.clearRect(0, 0, width, height);
 
+            for (let i = 0; i < particles.length; i += 1) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i + 1; j < particles.length; j += 1) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < config.lineDistance) {
+                        const opacity =
+                            1 - distance / config.lineDistance;
+
+                        ctx.beginPath();
+                        ctx.strokeStyle =
+                            `rgba(${config.color}, ${opacity * 0.2})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(
+                            particles[i].x,
+                            particles[i].y
+                        );
+                        ctx.lineTo(
+                            particles[j].x,
+                            particles[j].y
+                        );
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        if (
+            !window.matchMedia(
+                '(prefers-reduced-motion: reduce)'
+            ).matches
+        ) {
+            initParticles();
+            animateParticles();
+        }
+    </script>
+
+    <!-- 页面入场及滚动动画 -->
+    <script>
+        (() => {
+            const reduceMotion = window.matchMedia(
+                '(prefers-reduced-motion: reduce)'
+            ).matches;
+
+            const loader =
+                document.querySelector('.page-loader');
+
+            const revealTargets = document.querySelectorAll(
+                '.strengths,' +
+                '.products > .container > h2,' +
+                '.category-filter,' +
+                '.category-header,' +
+                '.category-desc,' +
+                '.product-card,' +
+                '.solutions,' +
+                'footer'
+            );
+
+            revealTargets.forEach((element, index) => {
+                element.classList.add('reveal-on-scroll');
+
+                if (
+                    element.classList.contains('product-card')
+                ) {
+                    element.style.setProperty(
+                        '--reveal-delay',
+                        `${(index % 4) * 80}ms`
+                    );
+                }
+            });
+
+            document.documentElement.classList.add(
+                'animation-ready'
+            );
+
+            window.setTimeout(() => {
+                if (loader) {
+                    loader.remove();
+                }
+            }, reduceMotion ? 0 : 1900);
+
+            if (
+                reduceMotion ||
+                !('IntersectionObserver' in window)
+            ) {
+                revealTargets.forEach(element => {
+                    element.classList.add('is-visible');
+                });
+
+                return;
+            }
+
+            const observer = new IntersectionObserver(
+                entries => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        entry.target.classList.add(
+                            'is-visible'
+                        );
+
+                        observer.unobserve(entry.target);
+                    });
+                },
+                {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -8% 0px'
+                }
+            );
+
+            revealTargets.forEach(element => {
+                observer.observe(element);
+            });
+        })();
+    </script>
 </body>
 </html>
